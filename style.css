@@ -1,0 +1,85 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+  }
+
+  .title-container{
+    background-color: #81c0a9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 90px;
+    font-size: 40px;
+  }
+  .title-1{
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  .title-2{
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  .title-3{
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  
+  .cuerpo{
+    background-color: #c9e9dd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 1200px;
+    flex-direction: column;
+  }
+  .choice{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  }
+  #rock{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #6bad95;
+  color: white;
+  border-radius: 7px;
+  width: 150px;
+  height: 45px;
+  margin-left: 10px;
+  margin-right: 10px;
+  border: rgb(255, 255, 255) 2px solid;
+  cursor: pointer;
+  }
+  #paper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #6bad95;
+    color: white;
+    border-radius: 7px;
+    width: 150px;
+    height: 45px;
+    margin-left: 10px;
+    margin-right: 10px;
+    border: rgb(255, 255, 255) 2px solid;
+    cursor: pointer;
+    }
+  #scissors{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #6bad95;
+    color: white;
+    border-radius: 7px;
+    width: 150px;
+    height: 45px;
+    margin-left: 10px;
+    margin-right: 10px;
+    border: rgb(255, 255, 255) 2px solid;
+    cursor: pointer;
+    }
+  
