@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock Paper Scissors</title>
     <link rel='stylesheet' href='style.css'/>
-    <script src="logic.js"></script>
+    
 </head>
 <body>
     <div class="title-container">
@@ -14,13 +14,21 @@
         <div class="title-3"><b>Scissors</b></div>
     </div>
     <div class="cuerpo">
+        <div class="info">
+            <div class="you">You</div>
+            <div class="bot">Bot</div>
+        </div>
         <div class="marcador">
-            <div class="yo"></div>
-            <div class="choice">
+            <div id="yo">0</div>
+            <div id="separador">-</div>
+            <div id="bot">0</div>
+        </div>    
+        <div class="choice">
                 <button id="rock">Rock</button>
                 <button id="paper">Paper</button>
                 <button id="scissors">Scissors</button>
         </div>
     </div>
+    <script src="logic.js"></script><!-- Se mueve abajo para que el DOM cargue por completo antes de ejecutar el javascript -->
 </body>
 </html>

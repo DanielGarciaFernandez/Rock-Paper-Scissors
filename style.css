@@ -26,14 +26,51 @@
     margin-right: 10px;
   }
   
+
+
   .cuerpo{
     background-color: #c9e9dd;
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 1200px;
+    height: 900px;
     flex-direction: column;
   }
+
+
+  .info{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  margin-bottom: 40px;
+  font-size: 75px;
+  }
+  .you{
+    margin-right: 75px;
+  }
+  .bot{
+    margin-left: 75px;
+  }
+
+
+  .marcador{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  margin-bottom: 40px;
+  font-size: 250px;
+  }
+  #separador{
+    margin-right: 20px;
+    margin-left: 20px;
+  }
+
+
+
+
+
   .choice{
   display: flex;
   justify-content: center;
@@ -53,6 +90,7 @@
   margin-right: 10px;
   border: rgb(255, 255, 255) 2px solid;
   cursor: pointer;
+  font-size: 20px;
   }
   #paper{
     display: flex;
@@ -67,6 +105,7 @@
     margin-right: 10px;
     border: rgb(255, 255, 255) 2px solid;
     cursor: pointer;
+    font-size: 20px;
     }
   #scissors{
     display: flex;
@@ -81,5 +120,6 @@
     margin-right: 10px;
     border: rgb(255, 255, 255) 2px solid;
     cursor: pointer;
+    font-size: 20px;
     }
   
