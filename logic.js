@@ -1,43 +1,79 @@
-function gethumanchoice() {
+let humancounterElement = document.getElementById('yo');
+let botcounterElement = document.getElementById('botpuntos');
+let humancounter = 0;
+let botcounter = 0;
 
-    let rockButton = document.getElementById("rock");
-    let paperButton = document.getElementById("paper");
-    let scissorsButton = document.getElementById("scissors");
+let generalcounter = 0;
 
-    let mychoice; // Declare mychoice outside of the event handlers
-
-    // Event handlers
-    rockButton.onclick = function() {
-        mychoice = 1; // Choose rock
-        console.log("mychoice:", mychoice); // Log after choice is made
-    };
-
-    paperButton.onclick = function() {
-        mychoice = 2; // Choose paper
-        console.log("mychoice:", mychoice); // Log after choice is made
-    };
-
-    scissorsButton.onclick = function() {
-        mychoice = 3; // Choose scissors
-        console.log("mychoice:", mychoice); // Log after choice is made
-    };
-
-}
-function getcomputerchoice(){
-    let botchoice = Math.floor(Math.random() * 3) + 1;
-    console.log(botchoice);
-    if (botchoice == 1){
-        //mejor usarlo para el humanchoice
+function playRound(humanSelection, computerSelection) {
+    if (humanSelection === computerSelection) {
+        generalcounter++;
+        console.log("Es un empate!");
+        return;
     }
+
+    // Lógica para determinar el ganador
+    if (humanSelection === 1 && computerSelection === 3) {
+        humancounter++;
+        generalcounter++;
+        console.log("Ganaste esta ronda! (Piedra vs Tijeras)");
+    } else if (humanSelection === 2 && computerSelection === 1) {
+        humancounter++;
+        generalcounter++;
+        console.log("Ganaste esta ronda! (Papel vs Piedra)");
+    } else if (humanSelection === 3 && computerSelection === 2) {
+        humancounter++;
+        generalcounter++;
+        console.log("Ganaste esta ronda! (Tijeras vs Papel)");
+    } else {
+        botcounter++;
+        generalcounter++;
+        console.log("Perdiste esta ronda!");
+    }
+
+    if (generalcounter >= 5){
+        alert("Round Finished")
+        botcounter = 0;
+        humancounter = 0;
+        generalcounter = 0;
+    }
+
+    humancounterElement.textContent = humancounter;
+    botcounterElement.textContent = botcounter;
+
+    console.log(`Marcador - Humano: ${humancounter}, Bot: ${botcounter}`);
+
 }
 
+function getComputerChoice() {
+    var botChoice = Math.floor(Math.random() * 3) + 1; // 1: Piedra, 2: Papel, 3: Tijeras
+    return botChoice;
+}
 
+function getHumanChoice() {
+    var myChoice = 0; // Inicializar la elección del humano
 
-function playRound(humanchoice, computerchoice) {
-    // your code here!
-  }
-  
-  const humanselection = gethumanchoice();
-  const computerselection = getcomputerchoice();
-  
-  playRound(humanselection, computerselection);
+    // Asignar eventos a los botones
+    document.getElementById("rock").onclick = function() {
+        myChoice = 1; // Piedra
+        playGame(myChoice);
+    };
+
+    document.getElementById("paper").onclick = function() {
+        myChoice = 2; // Papel
+        playGame(myChoice);
+    };
+
+    document.getElementById("scissors").onclick = function() {
+        myChoice = 3; // Tijeras
+        playGame(myChoice);
+    };
+}
+
+function playGame(humanSelection) {
+    var computerSelection = getComputerChoice();
+    playRound(humanSelection, computerSelection);
+}
+
+// Iniciar el juego
+getHumanChoice();
