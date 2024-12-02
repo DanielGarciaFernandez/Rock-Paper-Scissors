@@ -31,17 +31,19 @@ function playRound(humanSelection, computerSelection) {
         console.log("Perdiste esta ronda!");
     }
 
+    humancounterElement.textContent = humancounter;
+    botcounterElement.textContent = botcounter;
+
+    console.log(`Marcador - Humano: ${humancounter}, Bot: ${botcounter}`);
+
     if (generalcounter >= 5){
         alert("Round Finished")
         botcounter = 0;
         humancounter = 0;
         generalcounter = 0;
     }
-
     humancounterElement.textContent = humancounter;
     botcounterElement.textContent = botcounter;
-
-    console.log(`Marcador - Humano: ${humancounter}, Bot: ${botcounter}`);
 
 }
 
