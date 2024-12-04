@@ -3,11 +3,9 @@ let botcounterElement = document.getElementById('botpuntos');
 let humancounter = 0;
 let botcounter = 0;
 
-let generalcounter = 0;
 
 function playRound(humanSelection, computerSelection) {
     if (humanSelection === computerSelection) {
-        generalcounter++;
         console.log("Es un empate!");
         return;
     }
@@ -15,19 +13,15 @@ function playRound(humanSelection, computerSelection) {
     // Lógica para determinar el ganador
     if (humanSelection === 1 && computerSelection === 3) {
         humancounter++;
-        generalcounter++;
         console.log("Ganaste esta ronda! (Piedra vs Tijeras)");
     } else if (humanSelection === 2 && computerSelection === 1) {
         humancounter++;
-        generalcounter++;
         console.log("Ganaste esta ronda! (Papel vs Piedra)");
     } else if (humanSelection === 3 && computerSelection === 2) {
         humancounter++;
-        generalcounter++;
         console.log("Ganaste esta ronda! (Tijeras vs Papel)");
     } else {
         botcounter++;
-        generalcounter++;
         console.log("Perdiste esta ronda!");
     }
 
@@ -36,11 +30,15 @@ function playRound(humanSelection, computerSelection) {
 
     console.log(`Marcador - Humano: ${humancounter}, Bot: ${botcounter}`);
 
-    if (generalcounter >= 5){
-        alert("Round Finished")
+    if (humancounter >= 5){
+        alert("You Win")
         botcounter = 0;
         humancounter = 0;
-        generalcounter = 0;
+    }
+    if (botcounter >= 5){
+        alert("You Lose")
+        botcounter = 0;
+        humancounter = 0;
     }
     humancounterElement.textContent = humancounter;
     botcounterElement.textContent = botcounter;
